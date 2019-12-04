@@ -1,6 +1,6 @@
 import { cache, deleteCache, clear} from './cache';
 import { loading } from './loading';
-import { operateSuccess, debounce } from './custom';
+import { operateSuccess, debounce, notNull } from './custom';
 
 export {
     cache,
@@ -8,5 +8,6 @@ export {
     clear,
     loading,
     operateSuccess,
-    debounce
+    debounce,
+    notNull
 }

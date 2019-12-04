@@ -1,5 +1,5 @@
 import BaseService from './BaseService';
-import { cache, loading, operateSuccess, debounce } from './decorator';
+import { cache, loading, operateSuccess, debounce, notNull } from './decorator';
 import { IcacheResponse, IcacheParams } from '..//page/Cache';
 import { IloadingParams, IloadingResponse } from '../page/Loading';
 import { COMMON_ACTION } from '../store/common';
@@ -50,6 +50,7 @@ class DemoService extends BaseService {
     }
 
     // 统一请求loading状态控制，react中借助redux存储请求状态，Vue可借助vuex。
+    @notNull('page')
     @loading(COMMON_ACTION.LOADING_STATE, 'loading')
     async testLoading(params: IloadingParams) {
         try {
